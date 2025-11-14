@@ -1,0 +1,281 @@
+diff all
+
+# version
+# INAV/JHEMCUF745 8.0.1 Jul 31 2025 / 16:23:50 (ae47bcba) 
+# GCC-13.2.1 20231009
+
+# start the command batch
+batch start
+
+# reset configuration to default settings
+defaults noreboot
+
+# resources
+
+# Timer overrides
+
+# Outputs [servo]
+servo 1 1100 2500 1000 100
+servo 2 1100 2500 1000 100
+
+# safehome
+
+# Fixed Wing Approach
+
+# geozone
+
+# geozone vertices
+
+# features
+feature -OSD
+feature GPS
+feature CURRENT_METER
+feature PWM_OUTPUT_ENABLE
+
+# beeper
+
+# blackbox
+blackbox -NAV_ACC
+blackbox -NAV_POS
+blackbox NAV_PID
+blackbox MAG
+blackbox ACC
+blackbox ATTI
+blackbox -RC_DATA
+blackbox RC_COMMAND
+blackbox MOTORS
+blackbox -GYRO_RAW
+blackbox -PEAKS_R
+blackbox -PEAKS_P
+blackbox -PEAKS_Y
+blackbox -SERVOS
+
+# Receiver: Channel map
+
+# Ports
+serial 0 0 115200 115200 0 115200
+serial 1 64 115200 115200 0 115200
+serial 3 2 115200 115200 0 115200
+serial 5 1 115200 115200 0 115200
+serial 6 262144 115200 115200 0 115200
+
+# LEDs
+
+# LED color
+
+# LED mode_color
+
+# Modes [aux]
+aux 0 0 0 1950 2050
+aux 1 1 2 1400 1600
+aux 2 11 2 1900 2100
+aux 3 50 5 1925 2100
+
+# Adjustments [adjrange]
+
+# Receiver rxrange
+
+# temp_sensor
+
+# Mission Control Waypoints [wp]
+#wp 0 invalid
+
+# OSD [osd_layout]
+osd_layout 0 104 0 0 H
+osd_layout 1 104 0 0 H
+osd_layout 2 104 0 0 H
+osd_layout 3 104 0 0 H
+
+# Programming: logic
+logic 0 1 -1 2 1 8 0 1800 0
+
+# Programming: global variables
+
+# Programming: PID controllers
+
+# OSD: custom elements
+
+# master
+set gyro_main_lpf_hz = 110
+set gyro_dyn_lpf_min_hz = 90
+set gyro_dyn_lpf_max_hz = 220
+set gyro_dyn_lpf_curve_expo = 4
+set dynamic_gyro_notch_q = 250
+set dynamic_gyro_notch_min_hz = 73
+set dynamic_gyro_notch_mode = 3D
+set setpoint_kalman_q = 200
+set gyro_zero_x = 12
+set gyro_zero_y = 1
+set ins_gravity_cmss =  975.482
+set acc_hardware = ICM42605
+set acczero_x = -3
+set acczero_y = -3
+set acczero_z = -29
+set accgain_y = 4099
+set accgain_z = 4088
+set align_mag = CW270
+set mag_hardware = QMC5883
+set magzero_x = 215
+set magzero_y = -416
+set magzero_z = 71
+set maggain_x = 1337
+set maggain_y = 1450
+set maggain_z = 1484
+set baro_hardware = SPL06
+set serialrx_provider = CRSF
+set msp_override_channels = 3072
+set blackbox_rate_denom = 2
+set motor_pwm_protocol = DSHOT600
+set failsafe_procedure = DROP
+set align_board_roll = 1800
+set align_board_yaw = 900
+set vbat_scale = 1096
+set current_meter_scale = 170
+set applied_defaults = 5
+set rpm_gyro_filter_enabled = ON
+set rpm_gyro_min_hz = 70
+set gps_sbas_mode = EGNOS
+set gps_ublox_use_galileo = ON
+set gps_ublox_use_beidou = ON
+set gps_ublox_use_glonass = ON
+set deadband = 4
+set yaw_deadband = 4
+set airmode_type = THROTTLE_THRESHOLD
+set name = MSP_OVERRIDE_CHA
+
+# control_profile
+control_profile 1
+
+set mc_p_pitch = 25
+set mc_i_pitch = 80
+set mc_d_pitch = 10
+set mc_cd_pitch = 80
+set mc_p_roll = 25
+set mc_i_roll = 80
+set mc_d_roll = 10
+set mc_cd_roll = 80
+set mc_p_yaw = 60
+set mc_i_yaw = 100
+set mc_cd_yaw = 80
+set dterm_lpf_hz = 60
+set nav_mc_pos_z_p = 47
+set nav_mc_vel_z_p = 89
+set nav_mc_pos_xy_p = 30
+set nav_mc_vel_xy_p = 20
+set nav_mc_vel_xy_i = 10
+set nav_mc_vel_xy_d = 20
+set nav_mc_heading_p = 62
+set nav_fw_alt_control_response = 30
+set mc_iterm_relax_cutoff = 5
+set d_boost_min =  0.000
+set d_boost_max =  1.100
+set d_boost_max_at_acceleration =  5000.000
+set smith_predictor_delay =  1.768
+set tpa_rate = 30
+set tpa_breakpoint = 1400
+set rc_expo = 50
+set rc_yaw_expo = 50
+set roll_rate = 50
+set pitch_rate = 50
+set yaw_rate = 45
+set ez_filter_hz = 80
+set ez_response = 80
+set ez_damping = 130
+set ez_stability = 120
+set ez_aggressiveness = 75
+set ez_rate = 120
+set ez_expo = 110
+
+# control_profile
+control_profile 2
+
+set mc_p_pitch = 30
+set mc_i_pitch = 82
+set mc_d_pitch = 32
+set mc_cd_pitch = 88
+set mc_p_roll = 28
+set mc_i_roll = 75
+set mc_d_roll = 29
+set mc_cd_roll = 80
+set mc_p_yaw = 38
+set mc_i_yaw = 80
+set mc_cd_yaw = 90
+set dterm_lpf_hz = 105
+set d_boost_min =  1.000
+set smith_predictor_delay =  1.447
+set tpa_rate = 20
+set tpa_breakpoint = 1200
+set rc_expo = 55
+set rc_yaw_expo = 55
+set roll_rate = 45
+set pitch_rate = 45
+set yaw_rate = 35
+set ez_enabled = ON
+set ez_response = 70
+set ez_damping = 130
+set ez_aggressiveness = 80
+set ez_rate = 51
+set ez_expo = 150
+
+# control_profile
+control_profile 3
+
+set tpa_rate = 20
+set tpa_breakpoint = 1200
+
+# mixer_profile
+mixer_profile 1
+
+set model_preview_type = 3
+set motorstop_on_low = OFF
+
+# Mixer: motor mixer
+
+mmix reset
+
+mmix 0  1.000 -1.000 -1.000  1.000
+mmix 1  1.000 -1.000  1.000 -1.000
+mmix 2  1.000  1.000 -1.000 -1.000
+mmix 3  1.000  1.000  1.000  1.000
+
+# Mixer: servo mixer
+smix reset
+
+smix 0 1 17 100 0 0
+smix 1 2 18 100 0 0
+
+# mixer_profile
+mixer_profile 2
+
+
+# Mixer: motor mixer
+
+# Mixer: servo mixer
+
+# battery_profile
+battery_profile 1
+
+set bat_cells = 6
+set vbat_cell_detect_voltage = 430
+set vbat_max_cell_voltage = 421
+set battery_capacity = 9025
+set throttle_idle =  6.000
+set nav_mc_hover_thr = 1600
+
+# battery_profile
+battery_profile 2
+
+
+# battery_profile
+battery_profile 3
+
+
+# restore original profile selection
+control_profile 1
+mixer_profile 1
+battery_profile 1
+
+# save configuration
+save
+
+# 
